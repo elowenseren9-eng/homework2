@@ -1,0 +1,20 @@
+课堂作业二自动检查记录
+检查日期：2026-09-05
+
+PASS: all structural checks completed
+- feedback-form/index.html: 9 controls, 5 types
+- feedback-form/index.html: 3 controls use validation attributes
+- collect-form/index.html: 17 controls, 9 types
+- collect-form/index.html: 9 controls use validation attributes
+
+检查内容：
+1. HTML5 doctype、lang、charset、viewport。
+2. header、nav、main、section、footer 语义结构。
+3. 外部 CSS 文件路径与大括号配对。
+4. id 唯一性与页面内导航目标。
+5. 所有 input、select、textarea 的 name 和 label 关联。
+6. 控件类型数量与 required、pattern、min、max、maxlength、minlength 校验属性。
+7. fieldset/legend、details/summary 和纯 CSS 表单状态选择器。
+8. 未使用 JavaScript，未使用 table 进行页面布局。
+
+说明：自动检查不等同于浏览器人工验收。提交前仍需在本人浏览器中检查页面显示、原生校验提示与 Console，并补充截图。
