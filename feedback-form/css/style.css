@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  --primary: #0d6efd;
+  --primary-dark: #0a58ca;
+  --text: #243247;
+  --muted: #667085;
+  --line: #d9e0e8;
+  --surface: #ffffff;
+  --background: #f4f7fb;
+}
+
+body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  color: var(--text);
+  background: var(--background);
+  font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+header {
+  padding: 18px 12px 8px;
+  text-align: center;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 4px;
+  color: #183b66;
+  font-size: 2rem;
+}
+
+header p,
+footer {
+  color: var(--muted);
+}
+
+nav {
+  margin: 12px 0 20px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 6px 10px;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 4px 14px rgb(32 56 85 / 6%);
+}
+
+h2 {
+  margin-bottom: 14px;
+  color: #234f82;
+  font-size: 1.25rem;
+}
+
+.form-field {
+  margin-bottom: 18px;
+}
+
+.form-field > label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+}
+
+input,
+textarea,
+button {
+  padding: 10px 12px;
+  border: 1px solid #b7c2cf;
+  border-radius: 6px;
+  font: inherit;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgb(13 110 253 / 22%);
+  outline-offset: 2px;
+}
+
+fieldset {
+  margin: 0 0 18px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 6px;
+  font-weight: 600;
+}
+
+.choice-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.choice-list label {
+  cursor: pointer;
+}
+
+.choice-list input {
+  margin-right: 4px;
+}
+
+small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+button {
+  border-color: var(--primary);
+  color: #fff;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button.secondary {
+  color: var(--primary);
+  background: #fff;
+}
+
+footer {
+  padding-top: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 12px;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  .choice-list,
+  .form-actions {
+    flex-direction: column;
+  }
+}

@@ -5,24 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="软件开发综合实践课程反馈信息采集页">
   <title>课程反馈</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header><h1>课程反馈</h1><p>你的意见直接改进下一次授课</p></header>
-  <nav aria-label="页面导航"><a href="#intro">填写说明</a><a href="#form">开始填写</a></nav>
+  <header>
+    <h1>课程反馈</h1>
+    <p>你的意见直接改进下一次授课</p>
+  </header>
+
+  <nav aria-label="页面导航">
+    <a href="#intro">填写说明</a>
+    <a href="#form">开始填写</a>
+  </nav>
+
   <main>
-    <section id="intro"><h2>填写说明</h2><p>匿名收集，仅用于改进教学，两分钟填完。</p></section>
-    <section id="form">
-      <h2>反馈表单</h2>
+    <section id="intro" aria-labelledby="intro-title">
+      <h2 id="intro-title">填写说明</h2>
+      <p>匿名收集，仅用于改进教学，两分钟填完。</p>
+    </section>
+
+    <section id="form" aria-labelledby="form-title">
+      <h2 id="form-title">反馈表单</h2>
       <form action="#" method="get">
-        <p><label for="name">姓名（可填昵称）</label><input type="text" id="name" name="name" placeholder="怎么称呼你" required></p>
-        <p><label for="mail">邮箱</label><input type="email" id="mail" name="mail" required></p>
-        <fieldset><legend>课程评分</legend><label><input type="radio" name="score" value="5" checked> 很好</label><label><input type="radio" name="score" value="4"> 好</label><label><input type="radio" name="score" value="3"> 一般</label></fieldset>
-        <fieldset><legend>想深入的主题（可多选）</legend><label><input type="checkbox" name="topic" value="layout"> 页面布局</label><label><input type="checkbox" name="topic" value="js"> JavaScript</label><label><input type="checkbox" name="topic" value="chart"> 数据可视化</label></fieldset>
-        <p><label for="advice">具体建议</label><textarea id="advice" name="advice" rows="4" maxlength="200" placeholder="说点什么"></textarea></p>
-        <p><button type="submit">提交反馈</button></p>
+        <p class="form-field">
+          <label for="name">姓名（可填昵称）</label>
+          <input type="text" id="name" name="name" placeholder="怎么称呼你" required>
+        </p>
+
+        <p class="form-field">
+          <label for="mail">邮箱</label>
+          <input type="email" id="mail" name="mail" placeholder="name@example.com" required>
+        </p>
+
+        <fieldset>
+          <legend>课程评分</legend>
+          <div class="choice-list">
+            <label><input type="radio" name="score" value="5" checked> 很好</label>
+            <label><input type="radio" name="score" value="4"> 好</label>
+            <label><input type="radio" name="score" value="3"> 一般</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>想深入的主题（可多选）</legend>
+          <div class="choice-list">
+            <label><input type="checkbox" name="topic" value="layout"> 页面布局</label>
+            <label><input type="checkbox" name="topic" value="js"> JavaScript</label>
+            <label><input type="checkbox" name="topic" value="chart"> 数据可视化</label>
+          </div>
+        </fieldset>
+
+        <p class="form-field">
+          <label for="advice">具体建议</label>
+          <textarea id="advice" name="advice" rows="4" maxlength="200" placeholder="说点什么"></textarea>
+          <small>最多 200 字</small>
+        </p>
+
+        <p class="form-actions">
+          <button type="submit">提交反馈</button>
+          <button type="reset" class="secondary">重新填写</button>
+        </p>
       </form>
     </section>
   </main>
-  <footer><p>软件开发综合实践 · 课程演示案例</p></footer>
+
+  <footer>
+    <p>软件开发综合实践 · 课程演示案例</p>
+  </footer>
 </body>
 </html>
