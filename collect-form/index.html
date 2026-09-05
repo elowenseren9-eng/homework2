@@ -3,21 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="校园前端工作坊报名信息采集页">
   <title>校园前端工作坊报名</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
+  <header class="site-header">
+    <p class="eyebrow">学生开发者协会 · 2026 秋季活动</p>
     <h1>校园前端工作坊报名</h1>
-    <p>面向零基础与有一定经验的同学，用半天时间完成一个表单页面。</p>
+    <p>面向零基础与有一定经验的同学，用半天时间完成一个可访问、可验证的表单页面。</p>
   </header>
-  <nav>
+
+  <nav aria-label="页面导航">
     <a href="#about">活动说明</a>
     <a href="#signup">填写报名</a>
+    <a href="#notes">填写说明</a>
   </nav>
+
   <main>
-    <section id="about"><h2>活动说明</h2><p>学习语义化 HTML、表单与 CSS 基础。</p></section>
-    <section id="signup"><h2>报名信息</h2><p>表单将在下一步添加。</p></section>
+    <section id="about" class="intro" aria-labelledby="about-title">
+      <div>
+        <p class="section-kicker">Workshop 02</p>
+        <h2 id="about-title">活动说明</h2>
+        <p>工作坊将介绍语义化 HTML、表单控件、原生校验与 CSS 基础。请于 2026 年 9 月 15 日前提交报名，名额 40 人。</p>
+      </div>
+      <dl class="facts">
+        <div><dt>时间</dt><dd>9 月 19 日 14:00–17:30</dd></div>
+        <div><dt>地点</dt><dd>信息楼 203 实验室</dd></div>
+        <div><dt>费用</dt><dd>免费</dd></div>
+      </dl>
+    </section>
+
+    <section id="notes" aria-labelledby="notes-title">
+      <details open>
+        <summary id="notes-title">填写说明</summary>
+        <ul>
+          <li>带“必填”标记的项目不能为空；提交时由浏览器执行原生校验。</li>
+          <li>学号使用 8–12 位数字；年级范围为 1–6。</li>
+          <li>请按页面顺序使用 Tab 键移动焦点，不需要鼠标也能完成填写。</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="signup" aria-labelledby="signup-title">
+      <p class="section-kicker">Registration</p>
+      <h2 id="signup-title">报名信息</h2>
+      <p class="required-note"><span aria-hidden="true">*</span> 表示必填项目</p>
+
+      <form action="#" method="get">
+        <fieldset>
+          <legend>基本信息</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="student-name">姓名 <span aria-hidden="true">*</span></label>
+              <input type="text" id="student-name" name="student_name" placeholder="例如：张明" autocomplete="name" maxlength="20" required>
+              <small>请填写真实姓名，最多 20 字。</small>
+            </div>
+
+            <div class="field">
+              <label for="student-id">学号 <span aria-hidden="true">*</span></label>
+              <input type="text" id="student-id" name="student_id" inputmode="numeric" placeholder="8–12 位数字" pattern="[0-9]{8,12}" title="请输入 8 至 12 位数字学号" required>
+              <small>仅填写数字，不含空格。</small>
+            </div>
+
+            <div class="field">
+              <label for="email">常用邮箱 <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
+              <small>用于接收活动通知。</small>
+            </div>
+
+            <div class="field">
+              <label for="grade">当前年级 <span aria-hidden="true">*</span></label>
+              <input type="number" id="grade" name="grade" min="1" max="6" placeholder="1–6" required>
+              <small>本科一年级填 1，以此类推。</small>
+            </div>
+
+            <div class="field full-width">
+              <label for="college">学院 <span aria-hidden="true">*</span></label>
+              <select id="college" name="college" required>
+                <option value="">请选择学院</option>
+                <option value="information">信息学院</option>
+                <option value="software">软件学院</option>
+                <option value="math">数学与统计学院</option>
+                <option value="other">其他学院</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>参与安排</legend>
+          <div class="field">
+            <span class="field-label">目前的前端基础 <span aria-hidden="true">*</span></span>
+            <div class="options">
+              <label><input type="radio" name="experience" value="beginner" required> 零基础</label>
+              <label><input type="radio" name="experience" value="basic"> 学过 HTML/CSS</label>
+              <label><input type="radio" name="experience" value="project"> 做过小项目</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">希望重点练习的内容</span>
+            <div class="options">
+              <label><input type="checkbox" name="interest" value="semantic"> 语义化结构</label>
+              <label><input type="checkbox" name="interest" value="form"> 表单与校验</label>
+              <label><input type="checkbox" name="interest" value="css"> CSS 排版</label>
+              <label><input type="checkbox" name="interest" value="accessibility"> 可访问性</label>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="preferred-date">可参加日期 <span aria-hidden="true">*</span></label>
+              <input type="date" id="preferred-date" name="preferred_date" min="2026-09-12" max="2026-09-30" required>
+            </div>
+
+            <div class="field">
+              <label for="device">自带设备</label>
+              <select id="device" name="device">
+                <option value="laptop">笔记本电脑</option>
+                <option value="shared">需要借用机房设备</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>补充说明</legend>
+          <div class="field">
+            <label for="expectation">参加期待 <span aria-hidden="true">*</span></label>
+            <textarea id="expectation" name="expectation" rows="5" placeholder="请用 10–200 字说明你希望学到什么" minlength="10" maxlength="200" required></textarea>
+            <small>10–200 字。</small>
+          </div>
+
+          <div class="field">
+            <label for="work-sample">作品附件（可选）</label>
+            <input type="file" id="work-sample" name="work_sample" accept=".html,.css,.pdf,image/*">
+            <small>可上传 HTML、CSS、PDF 或图片。</small>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>我已阅读活动说明，并同意仅将上述信息用于本次活动联络。<span aria-hidden="true">*</span></span>
+          </label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit">提交报名</button>
+          <button type="reset" class="secondary">重置表单</button>
+        </div>
+      </form>
+    </section>
   </main>
-  <footer><p>学生开发者协会</p></footer>
+
+  <footer>
+    <p>学生开发者协会 · 联系邮箱：devclub@example.edu.cn</p>
+    <a href="#top" aria-label="返回页面顶部">返回顶部</a>
+  </footer>
 </body>
 </html>
